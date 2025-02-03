@@ -11,10 +11,8 @@ def Menu(request):
     Desserts = FoodItem.objects.all().filter(category="DESSERT")
     Drinks = FoodItem.objects.all().filter(category="DRINK")
 
-    return render(request, 'menu.html',
-    {
-        'Starters': Starters
-        'Mains': Mains
-        'Desserts': Dessert
-        'Drinks': Drinks
-    })
+    return render(request, 'menu.html',{
+        'Starters': Starters,
+        'Mains': Mains,
+        'Desserts': Desserts,
+        'Drinks': Drinks,})
