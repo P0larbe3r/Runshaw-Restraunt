@@ -16,7 +16,7 @@ class table_booking(models.Model):
     phone=models.IntegerField()
     guests=models.IntegerField()
     table_size=models.CharField(max_length=40,choices=table_choices)
-    table_number=models.IntegerField()
+    table_number=models.IntegerField(default= 0)
     date=models.DateField()
     time=models.TimeField()
     date_create=models.DateField()
