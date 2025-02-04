@@ -5,11 +5,11 @@ class table_booking(models.Model):
     small='small'
     medium='medium'
     large='large'
-    table_choices={
+    table_choices=[
         (small,'SMALL'),
         (medium,'MEDIUM'),
        (large,'LARGE')
-    }
+    ]
     first_name=models.CharField(max_length=40)
     last_name=models.CharField(max_length=40)
     email=models.EmailField(max_length=40)
@@ -22,8 +22,7 @@ class table_booking(models.Model):
     date_create=models.DateField()
     
     #Order_reservation=models.ForeignKey()
-    guests=models.IntegerChoices()
-    table_size=models.CharField(40,choices=table_choices)
+    
 
 
 #Class for allergies
@@ -31,7 +30,7 @@ class Allergies(models.Model):
     name = models.CharField(max_length=100)
 
     def __str__(self):
-        return self.name
+        return f'{self.name}'
 
 
 class FoodItem(models.Model):
