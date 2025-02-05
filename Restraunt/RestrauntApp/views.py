@@ -7,10 +7,10 @@ def book_table_view(request):
     return render(request,"Book_table.html",{})
 
 def Menu(request):
-    Starters = FoodItem.objects.all().filter(category="STARTER")
-    Mains = FoodItem.objects.all().filter(category="MAIN")
-    Desserts = FoodItem.objects.all().filter(category="DESSERT")
-    Drinks = FoodItem.objects.all().filter(category="DRINK")
+    Starters = FoodItem.objects.filter(category="Starter")
+    Mains = FoodItem.objects.filter(category="Main")
+    Desserts = FoodItem.objects.filter(category="Dessert")
+    Drinks = FoodItem.objects.filter(category="Drink")
 
     return render(request, 'menu.html',{
         'Starters': Starters,

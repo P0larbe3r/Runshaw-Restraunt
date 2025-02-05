@@ -35,17 +35,23 @@ class Allergies(models.Model):
 
 class FoodItem(models.Model):
 
+    Main = "Main"
+    Starter = "Starter"
+    Dessert = "Dessert"
+    Drink = "Drink"
 
-    Category = (
-    ('Main','MAIN'),
-    ('Starter','STARTER'),
-    ('Dessert','DESSERT'),
-    ('Drink','DRINK'),
-)
+    Category = [
+
+        (Main,'MAIN'),
+        (Starter,'STARTER'),
+        (Dessert,'DESSERT'),
+        (Drink,'DRINK')
+    ]
+
     name = models.CharField(max_length=200)
     price = models.DecimalField(decimal_places=2,max_digits=4)
     allergies = models.ManyToManyField(Allergies)
-    category = models.CharField(max_length=7,choices=Category,default='Main')
+    category = models.CharField(max_length=7,choices=Category,default='MAIN')
 
     def __str__(self):
         return f'{self.name} - {self.category}'

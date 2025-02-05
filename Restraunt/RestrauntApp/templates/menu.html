@@ -1,24 +1,27 @@
-<h1> Menu </h1>
-{% for mains in Mains %}
-<h1> Mains </h1>
-<ul>
-    <li> {{ mains.name }} - {{ mains.price }} ( {{ mains.allergies }} )</li>
-</ul>
+<h1>Starters</h1>
+{% for starter in Starters   %}
+    <p> {{ starter.name }} - {{ starter.price }} ( {{ starter.allergies }} )</p>
+
 
 {% endfor %}
 
-{% for mains in Mains %}
 <h1> Mains </h1>
-<ul>
-    <li> {{ mains.name }} - {{ mains.price }} ( {{ mains.allergies }} )</li>
-</ul>
+{% for main in Mains %}
+
+    <p> {{ main.name }} - {{ main.price }} ( {{ main.allergies }} )</p>
 
 {% endfor %}
 
-{% for mains in Mains %}
-<h1> Mains </h1>
-<ul>
-    <li> {{ mains.name }} - {{ mains.price }} ( {{ mains.allergies }} )</li>
-</ul>
+<h1>Desserts</h1>
+{% for desserts in Desserts %}
+
+    <p> {{ desserts.name }} - {{ desserts.price }} ( {{ desserts.allergies }} ) </p>
+
+{% endfor %}
+
+<h1>Drinks</h1>
+{% for drink in Drinks %}
+
+    <p> {{ Drinks.name }} - {{ Drinks.price }} ( {{ Drinks.allergies }} ) </p>
 
 {% endfor %}
