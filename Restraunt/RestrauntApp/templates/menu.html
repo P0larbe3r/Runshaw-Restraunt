@@ -1,3 +1,5 @@
+{% extends 'base.html'%}
+{% block content %}
 <style>
     #allergies{
         color: rgb(151, 151, 151);
@@ -44,16 +46,8 @@
         {% endfor %}
   </div>
     <div class="MainDiv">
-{% extends 'base.html'%}
 
-{% block content %}
-<h1>Starters</h1>
-{% for starter in Starters   %}
-    <p> {{ starter.name }} - £{{ starter.price }} (  {% for allergy in starter.allergies.all %}
-        {{ allergy.name }},
-    {% endfor %}
-    )</p>
-{% endfor %}
+
 
 <h1> Mains </h1>
 {% for main in Mains %}
@@ -94,3 +88,5 @@
             {% endfor %}
     </div>
 </div>
+
+{% endblock %}
