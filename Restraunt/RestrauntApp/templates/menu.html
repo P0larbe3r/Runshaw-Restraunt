@@ -1,37 +1,85 @@
-<h1>Starters</h1>
-{% for starter in Starters   %}
-    <p> {{ starter.name }} - £{{ starter.price }} (  {% for allergy in starter.allergies.all %}
-        {{ allergy.name }},
-    {% endfor %}
-    )</p>
-{% endfor %}
+<style>
+    #allergies{
+        color: rgb(151, 151, 151);
+    }
+    .MenuDiv{
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .StarterDiv{
+    
+        margin: 3%;
+        height: fit-content;
+      
+        
+    }
+    .MainDiv{
+        margin: 3%
+
+    }
+    .DessertDiv{
+ 
+        margin: 3%
+        
+        
+    }
+    .DrinkDiv{
+
+        margin: 3%
+    }
+</style>
+<div class="MenuDiv">
+    <div class="StarterDiv">
+        <h1>Starters</h1>
+        {% for starter in Starters   %}
+            <p> 
+                <strong>{{ starter.name }}</strong> - £{{ starter.price }} <br> 
+                <span id="allergies"> {% for allergy in starter.allergies.all %}
+                {{ allergy.name }},
+                {% endfor %}
+                </span>
+            </p>
+        {% endfor %}
+  </div>
+    <div class="MainDiv">
 
 <h1> Mains </h1>
 {% for main in Mains %}
 
-    <p> {{ main.name }} - £{{ main.price }}  (  {% for allergy in main.allergies.all %}
-        {{ allergy.name }},
-    {% endfor %}
-    )</p>
-
-{% endfor %}
-
+            <p> 
+                <strong>{{ main.name }}</strong> - £{{ main.price }} <br> 
+                <span id="allergies"> {% for allergy in main.allergies.all %}
+                {{ allergy.name }},
+                {% endfor %}
+                </span>
+            </p>
+        {% endfor %}
+  </div>
+    <div class="DessertDiv">
 <h1>Desserts</h1>
 {% for desserts in Desserts %}
 
-    <p> {{ desserts.name }} - £{{ desserts.price }} (  {% for allergy in desserts.allergies.all %}
-        {{ allergy.name }},
-    {% endfor %}
-    )</p>
-
-{% endfor %}
-
+            <p> 
+                <strong>{{ desserts.name }}</strong> - £{{ desserts.price }} <br> 
+                <span id="allergies"> {% for allergy in desserts.allergies.all %}
+                {{ allergy.name }},
+                {% endfor %}
+                </span>
+            </p>
+            {% endfor %}
+    </div>
+    <div class="DrinkDiv">
 <h1>Drinks</h1>
 {% for drink in Drinks %}
 
-    <p> {{ drink.name }} - £{{ drink.price }} (  {% for allergy in drink.allergies.all %}
-        {{ allergy.name }}
-    {% endfor %}
-    )</p>
-
-{% endfor %}
+            <p> 
+                <strong>{{ drink.name }}</strong> - £{{ drink.price }} <br> 
+                <span id="allergies"> {% for allergy in drink.allergies.all %}
+                {{ allergy.name }},
+                {% endfor %}
+                </span>
+            </p>
+            {% endfor %}
+    </div>
+</div>
