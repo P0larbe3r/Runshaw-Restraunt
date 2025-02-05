@@ -1,10 +1,19 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 from .models import Allergies, FoodItem
+from .forms import TableBookingForm
 
 # Create your views here.
 
 def book_table_view(request):
-    return render(request,"Book_table.html",{})
+    if request.method == "POST":
+        form = TableBookingForm(request.POST)
+        if form.is_valid():
+            form.save()
+            redirect('home')  
+    else:
+        form = TableBookingForm()
+
+    return render(request, "Book_table.html", {'form': form})
 
 def Menu(request):
     Starters = FoodItem.objects.filter(category="Starter")
