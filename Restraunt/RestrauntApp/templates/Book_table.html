@@ -1,13 +1,23 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
+{% extends 'base.html' %}
+{% block content %}
+    <style>
+        body{
+        }
+        #form-container{
+            width: 30%;
+            height: 100%;
+            border: 2px;
+        }
+    </style>
 <body>
-
-    who wants food on the table to eat so they are no longer hungry and can continue to sustain their life.
-    
-</body>
-</html>
+    <h1>Book a Table</h1>
+    <p>
+      Who wants food on the table to eat so they are no longer hungry and can continue to sustain their life.
+    </p>
+    <div id="form-container">
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Book Table</button>
+    </form>
+{endblock}
