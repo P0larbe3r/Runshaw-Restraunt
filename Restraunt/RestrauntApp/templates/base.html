@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .nav {
+            display: flex;
+            align-items: center;
+            padding: 12px;
+            background: rgb(41, 41, 41);
+        }
+
+        .nav a {
+            text-decoration: none;
+            color: white;
+            font-size: 18px;
+            margin-left: 16px;
+        }
+    </style>
+</head>
+<body>
+    <div class="nav">
+        <div class="nav-left">
+            <img style="background: white;" width="70" src="https://upload.wikimedia.org/wikipedia/en/thumb/0/0e/Runshaw_College_Logo.svg/1200px-Runshaw_College_Logo.svg.png" alt="">
+        </div>
+        <div class="nav-right">
+            <a href="{% url 'Menu' %}">Menu</a>
+            <a href="{% url 'book_table' %}">Book Table</a>
+            <a href="{% url 'contact' %}">Contact</a>
+        </div>
+    </div>
+    {% block content %}
+    {% endblock %}
+</body>
+</html>

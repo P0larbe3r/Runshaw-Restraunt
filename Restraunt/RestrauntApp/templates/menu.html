@@ -43,6 +43,16 @@
         {% endfor %}
   </div>
     <div class="MainDiv">
+{% extends 'base.html'%}
+
+{% block content %}
+<h1>Starters</h1>
+{% for starter in Starters   %}
+    <p> {{ starter.name }} - £{{ starter.price }} (  {% for allergy in starter.allergies.all %}
+        {{ allergy.name }},
+    {% endfor %}
+    )</p>
+{% endfor %}
 
 <h1> Mains </h1>
 {% for main in Mains %}
@@ -69,7 +79,7 @@
             </p>
             {% endfor %}
     </div>
-    <div class="DrinkDiv">
+<div class="DrinkDiv">
 <h1>Drinks</h1>
 {% for drink in Drinks %}
 
