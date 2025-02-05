@@ -1,3 +1,5 @@
+{% extends 'base.html'%}
+{% block content %}
 <style>
     #allergies{
         color: rgb(151, 151, 151);
@@ -14,20 +16,45 @@
       
         
     }
+    .StarterDiv p{
+    
+    margin: 3%;
+    padding: 5px;
+    height: fit-content;
+  
+    
+}
     .MainDiv{
         margin: 3%
 
     }
+    .MainDiv p {
+        margin: 3%;
+        padding: 5px;
+
+    }
+
     .DessertDiv{
  
         margin: 3%
         
         
     }
+
+    .DessertDiv p{
+ 
+        margin: 3%;
+        padding:5px;
+        
+        }
     .DrinkDiv{
 
         margin: 3%
     } 
+    .DrinkDiv p{
+        margin: 3%;
+        margin: 5px;
+    }
     
 </style>
 <div class="MenuDiv">
@@ -44,16 +71,6 @@
         {% endfor %}
   </div>
     <div class="MainDiv">
-{% extends 'base.html'%}
-
-{% block content %}
-<h1>Starters</h1>
-{% for starter in Starters   %}
-    <p> {{ starter.name }} - £{{ starter.price }} (  {% for allergy in starter.allergies.all %}
-        {{ allergy.name }},
-    {% endfor %}
-    )</p>
-{% endfor %}
 
 <h1> Mains </h1>
 {% for main in Mains %}
@@ -94,3 +111,5 @@
             {% endfor %}
     </div>
 </div>
+
+{%endblock%}

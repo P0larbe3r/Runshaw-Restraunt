@@ -7,9 +7,10 @@ from .forms import TableBookingForm
 def book_table_view(request):
     if request.method == "POST":
         form = TableBookingForm(request.POST)
+        print(form)
         if form.is_valid():
             form.save()
-            redirect('home')  
+            return redirect('home')  
     else:
         form = TableBookingForm()
 
