@@ -1,27 +1,37 @@
 <h1>Starters</h1>
 {% for starter in Starters   %}
-    <p> {{ starter.name }} - {{ starter.price }} ( {{ starter.allergies }} )</p>
-
-
+    <p> {{ starter.name }} - £{{ starter.price }} (  {% for allergy in starter.allergies.all %}
+        {{ allergy.name }},
+    {% endfor %}
+    )</p>
 {% endfor %}
 
 <h1> Mains </h1>
 {% for main in Mains %}
 
-    <p> {{ main.name }} - {{ main.price }} ( {{ main.allergies }} )</p>
+    <p> {{ main.name }} - £{{ main.price }}  (  {% for allergy in main.allergies.all %}
+        {{ allergy.name }},
+    {% endfor %}
+    )</p>
 
 {% endfor %}
 
 <h1>Desserts</h1>
 {% for desserts in Desserts %}
 
-    <p> {{ desserts.name }} - {{ desserts.price }} ( {{ desserts.allergies }} ) </p>
+    <p> {{ desserts.name }} - £{{ desserts.price }} (  {% for allergy in desserts.allergies.all %}
+        {{ allergy.name }},
+    {% endfor %}
+    )</p>
 
 {% endfor %}
 
 <h1>Drinks</h1>
 {% for drink in Drinks %}
 
-    <p> {{ Drinks.name }} - {{ Drinks.price }} ( {{ Drinks.allergies }} ) </p>
+    <p> {{ drink.name }} - £{{ drink.price }} (  {% for allergy in drink.allergies.all %}
+        {{ allergy.name }}
+    {% endfor %}
+    )</p>
 
 {% endfor %}
