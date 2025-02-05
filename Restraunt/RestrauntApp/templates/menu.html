@@ -1,3 +1,6 @@
+{% extends 'base.html'%}
+
+{% block content %}
 <h1>Starters</h1>
 {% for starter in Starters   %}
     <p> {{ starter.name }} - £{{ starter.price }} (  {% for allergy in starter.allergies.all %}
@@ -35,3 +38,5 @@
     )</p>
 
 {% endfor %}
+
+{% endblock %}
